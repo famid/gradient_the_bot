@@ -1,5 +1,4 @@
 from typing import Dict
-
 import requests
 import os
 import json
@@ -33,7 +32,7 @@ class GithubService:
         """
         try:
             response = requests.post(self.PUSH_API_URL, data=self.__create_payload(), headers=self.__headers)
-            print(response.content.decode())
+            # print(response.content.decode())
 
             return dict(success=True, message="Github repository has been created")
         except requests.exceptions.RequestException as err:
