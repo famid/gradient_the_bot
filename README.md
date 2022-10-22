@@ -1,8 +1,8 @@
 ```
 The tasks this tool will automate:
 -----------------------------------
-1. Create a new Laravel project.
-2. Generate .env file and set database credential on .env file
+1. It can create both new Laravel or React project.
+2. For Laravel, Generate .env file and set database credential on .env file
 3. Will init git in the project and create a README.md file
 4. Commit the changes
 5. Create a repository with the project name in github
@@ -39,6 +39,10 @@ For Laravel:
 1. php 
 2. composer
 
+For React:
+1. node
+2. npm 
+
 ```
 
 ```
@@ -52,13 +56,18 @@ Project Tree:
 │   ├── run.py
 │   └── service.py
 ├── gradient
-│   ├── __init__.py
-│   └── gradient.py
+│   ├── build_project.py
+│   └── __init__.py
+├── gradient.py
 ├── laravel_project_builder
 │   ├── __init__.py
 │   ├── project_builder.py
 │   ├── run.py
 │   └── set_env.py
+├── react_project_builder
+│   ├── __init__.py
+│   ├── project_builder.py
+│   └── run.py
 ├── README.md
 ├── requirements.txt
 └── settings.py
@@ -84,7 +93,7 @@ $ python3 -m venv gradient_bot_env
 
 4. Activate your venv
 
-$ . gradient_bot_env/bin/activate
+$ . source gradient_bot_env/bin/activate
 
 5. Lets get into our venv 
  
@@ -99,7 +108,10 @@ GITHUB_ACCESS_TOKEN=< your github personal accerss token >
 GITHUB_USERNAME=<your github username>
 ROOT_PATH="your root path"
 
-8. Run gradient.py file from gradient package.
-9. After running the project, imput project name
-10. Then set database credentials if you want
+8. Run gradient.py file.
+$ python gradient.py or python3 gradient.py
+
+9. Type the project type. Laravel or React
+10. Then imput the project name
+11. For Laravel, input the database credentials if you want
 ```
