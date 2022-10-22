@@ -1,6 +1,7 @@
 import subprocess
 from gradient.build_project import BuildProject
 from github.run import create_git_repo_and_push_project
+from settings import APP_LIST
 
 
 def set_project_name() -> str:
@@ -22,11 +23,10 @@ def is_directory_exits(directory_name):
 
 
 def get_project_type():
-    app_name_list = ["Laravel", "React"]
-    for idx, app in enumerate(app_name_list):
+    for idx, app in enumerate(APP_LIST):
         print(idx, ". ", app)
     user_option = input("Type the app name: ")
-    if user_option not in app_name_list:
+    if user_option not in APP_LIST:
         print("You must choose the option below list!!")
         get_project_type()
 
